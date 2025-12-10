@@ -1,12 +1,11 @@
 describe('Tehtävä 1', () => {
   it('Avaa wikipedia, hakee Jamk ja menee sivustolle, etsii sivulta Kampukset, ja vaihtaa englannin kielelle', () => {
     cy.visit('https://fi.wikipedia.org/');
+    cy.reload();
 
     cy.get('.search-toggle').click();
 
     cy.get('input[name="search"]:visible').type('JAMK');
-
-    cy.wait(500);
 
     cy.get('input[name="search"]:visible').type('{enter}');
 
